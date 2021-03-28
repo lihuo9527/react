@@ -6,16 +6,24 @@
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
+    "antd": "^4.14.1",
+    "axios": "^0.21.1",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set REACT_APP_MODE=development&& react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start:test": "set REACT_APP_MODE=test&& react-scripts start",
+    "build:dev": "set REACT_APP_MODE=development&& react-scripts build",
+    "build:pro": "set REACT_APP_MODE=production&& react-scripts build"
   },
   "eslintConfig": {
     "extends": [
