@@ -34,13 +34,20 @@ function toUri(object) {
 
 
 export function jsonP(code) {
+    let isSuccess = false;
     return new Promise((resolve, reject) => {
         var oscript = document.createElement('script');
         oscript.src = 'http://hq.sinajs.cn/list=' + code;
         oscript.type = 'text/javascript';
         oscript.onload = () => {
+            isSuccess = true;
             resolve(window[`hq_str_${code}`])
         };
+        setTimeout(()=>{
+            if (!isSuccess) {
+               reject({ data: { msg: '请求超时！' } })
+            }
+        }, 15000)
         document.head.appendChild(oscript);
         document.head.removeChild(oscript);
     })

@@ -23,21 +23,10 @@ const routes = [
         routes: accountRoutes,
          
     },
-    // {
-    //     path: "/account",
-    //     component: CommonLayout,
-    //     routes: [
-    //        {
-    //         path: "/account/login",
-    //         component: Login
-    //        },
-    //        {
-    //          path: "/account/signup",
-    //          component: React.lazy(() => import('./modules/account/components/signup/signup'))
-    //        }
-    //     ]
-    // }
-    // accountRoutes
+    {
+        path: "/disguise/:code",
+        component: React.lazy(() => import('./modules/disguise/components/disguise')), 
+    }
 
 ];
 class AppRoutes extends React.Component {

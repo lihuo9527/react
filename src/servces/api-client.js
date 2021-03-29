@@ -1,5 +1,5 @@
 import { get, jsonP } from './http-client.js';
-export async function test() {
+export async function fetchData() {
     return await get('test', []);
 }
 
